@@ -7,11 +7,13 @@ const app = express();
 
 const port = 3002;
 
-const {getRobots, getRobotsById} = require("./controllers/getrobots");
+const {getRobots, getRobotsById, getRobotsBySeries} = require("./controllers/getrobots");
 
 app.get("/", getRobots );
 
-app.get("/:id", getRobotsById)
+app.get("/id/:id", getRobotsById);
+
+app.get("/series/:series", getRobotsBySeries);
 
 
 app.listen(port, ()=>{
